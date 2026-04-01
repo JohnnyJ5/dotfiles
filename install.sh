@@ -17,7 +17,7 @@ echo "Installing Claude user settings..."
 symlink "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
 symlink "$DOTFILES/claude/statusline.sh" "$HOME/.claude/statusline.sh"
 symlink "$DOTFILES/claude/agents"        "$HOME/.claude/agents"
-symlink "$DOTFILES/.bashrc" "$HOME/.bashrc"
+symlink "$DOTFILES/.bashrc"              "$HOME/.bashrc"
 
 
 # Uncomment if you add a user-level CLAUDE.md
