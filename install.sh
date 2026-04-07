@@ -17,9 +17,15 @@ echo "Installing Claude user settings..."
 symlink "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
 symlink "$DOTFILES/claude/statusline.sh" "$HOME/.claude/statusline.sh"
 symlink "$DOTFILES/claude/agents"        "$HOME/.claude/agents"
+symlink "$DOTFILES/claude/hooks"         "$HOME/.claude/hooks"
 symlink "$DOTFILES/.bashrc"              "$HOME/.bashrc"
 
 # Uncomment if you add a user-level CLAUDE.md
 # symlink "$DOTFILES/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+
+echo "Installing global git hooks..."
+symlink "$DOTFILES/claude/git-hooks"     "$HOME/.claude/git-hooks"
+git config --global core.hooksPath "$HOME/.claude/git-hooks"
+echo "  git config --global core.hooksPath ~/.claude/git-hooks"
 
 echo "Done."
