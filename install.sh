@@ -25,6 +25,8 @@ symlink "$DOTFILES/.bashrc"              "$HOME/.bashrc"
 #update claude
 claude install
 
+alias claude-yolo='claude --dangerously-skip-permissions'
+
 # Uncomment if you add a user-level CLAUDE.md
 # symlink "$DOTFILES/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 
