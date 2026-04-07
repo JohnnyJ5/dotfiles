@@ -13,9 +13,6 @@ symlink() {
   echo "  $dst -> $src"
 }
 
-#update PATH settings
-export PATH="$HOME/.local/bin:$PATH"
-
 echo "Installing Claude user settings..."
 symlink "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
 symlink "$DOTFILES/claude/statusline.sh" "$HOME/.claude/statusline.sh"
