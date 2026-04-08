@@ -18,6 +18,7 @@ symlink "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
 symlink "$DOTFILES/claude/statusline.sh" "$HOME/.claude/statusline.sh"
 symlink "$DOTFILES/claude/agents"        "$HOME/.claude/agents"
 symlink "$DOTFILES/claude/hooks"         "$HOME/.claude/hooks"
+symlink "$DOTFILES/claude/git-hooks"     "$HOME/.claude/git-hooks"
 symlink "$DOTFILES/.bashrc"              "$HOME/.bashrc"
 
 # Uncomment if you add a user-level CLAUDE.md
