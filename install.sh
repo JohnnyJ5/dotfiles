@@ -21,8 +21,7 @@ symlink "$DOTFILES/claude/hooks"         "$HOME/.claude/hooks"
 symlink "$DOTFILES/claude/git-hooks"     "$HOME/.claude/git-hooks"
 symlink "$DOTFILES/.bashrc"              "$HOME/.bashrc"
 
-# Uncomment if you add a user-level CLAUDE.md
-# symlink "$DOTFILES/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+symlink "$DOTFILES/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 
 echo "Installing global git hooks..."
 symlink "$DOTFILES/claude/git-hooks"     "$HOME/.claude/git-hooks"
