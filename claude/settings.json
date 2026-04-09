@@ -16,9 +16,9 @@
                     },
                     {
                         "type": "command",
-                        "if": "Bash(git push*)",
+                        "if": "Bash(git commit*)",
                         "statusMessage": "Running clang-format on staged C/C++ files...",
-                        "command": "cmd=$(jq -r '.tool_input.command'); if echo \"$cmd\" | grep -qE '^git push'; then files=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null | grep -E '\\.(c|cpp|h|hpp)$' || true); if [ -n \"$files\" ]; then if ! command -v clang-format &>/dev/null; then echo '{\"systemMessage\": \"Warning: clang-format not found, skipping C/C++ formatting\"}'; else echo \"$files\" | xargs clang-format -i && echo \"$files\" | xargs git add; fi; fi; fi"
+                        "command": "cmd=$(jq -r '.tool_input.command'); if echo \"$cmd\" | grep -qE '^git commit'; then files=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null | grep -E '\\.(c|cpp|h|hpp)$' || true); if [ -n \"$files\" ]; then if ! command -v clang-format &>/dev/null; then echo '{\"systemMessage\": \"Warning: clang-format not found, skipping C/C++ formatting\"}'; else echo \"$files\" | xargs clang-format -i && echo \"$files\" | xargs git add; fi; fi; fi"
                     }
                 ]
             }
