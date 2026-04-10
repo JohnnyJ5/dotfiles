@@ -13,6 +13,7 @@ symlink() {
   echo "  $dst -> $src"
 }
 
+mkdir -p $HOME/.claude/
 echo "Installing Claude user settings..."
 symlink "$DOTFILES/claude/settings.json" "$HOME/.claude/settings.json"
 symlink "$DOTFILES/claude/statusline.sh" "$HOME/.claude/statusline.sh"
