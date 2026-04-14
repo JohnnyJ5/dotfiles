@@ -13,4 +13,4 @@ alias la='ls -A'
 alias ll='ls -alF'
 alias ls='ls --color=auto'
 alias psef='ps -ef | grep'
-
+alias claude-yolo='claude --dangerously-skip-permissions --effort max'
