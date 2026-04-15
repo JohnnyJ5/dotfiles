@@ -5,6 +5,7 @@ export PS1="\[\033[36m\]\u\[\033[0m\] \[\033[34m\]\w\[\033[0m\]\[\033[31m\]\$(pa
 
 export CLAUDE_CODE_EFFORT_LEVEL=max
 export CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING=1
+alias claude-yolo='claude --dangerously-skip-permissions
 
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -16,4 +17,3 @@ alias la='ls -A'
 alias ll='ls -alF'
 alias ls='ls --color=auto'
 alias psef='ps -ef | grep'
-alias claude-yolo='claude --dangerously-skip-permissions --effort max'
