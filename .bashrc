@@ -7,6 +7,8 @@ export CLAUDE_CODE_EFFORT_LEVEL=max
 export CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING=1
 alias claude-yolo='claude --dangerously-skip-permissions'
 
+export PATH=$PATH:/home/johnnyj/dotfiles
+
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias gitadd='git add -u'
