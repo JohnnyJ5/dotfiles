@@ -37,6 +37,23 @@ DOCKER_COMMON=(
     -v "$HOME/.ssh/claude_github:/home/claude/.ssh/claude_github:ro"
 )
 
+setup_anthropic_api_key() {
+if [ -f "$CLAUDE_CONFIG_DIR/anthropic/api_key" ]; then
+    ANTHROPIC_API_KEY_VALUE=$(cat "$CLAUDE_CONFIG_DIR/anthropic/api_key")
+elif [ -n "${ANTHROPIC_API_KEY:-}" ]; then
+    ANTHROPIC_API_KEY_VALUE="$ANTHROPIC_API_KEY"
+else
+    echo "WARNING: No ANTHROPIC_API_KEY found."
+    echo "  Fix: mkdir -p ~/.config/anthropic && echo 'sk-ant-...' > ~/.config/anthropic/api_key && chmod 600 ~/.config/anthropic/api_key"
+    ANTHROPIC_API_KEY_VALUE=""
+fi
+
+DOCKER_COMMON+=(
+    -e ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY_VALUE}"
+)
+
+}
+
 ##token expires in one year
 setup_gh_token() {
 if [ -f "$CLAUDE_CONFIG_DIR/gh/claude_gh_token" ]; then
@@ -92,6 +109,7 @@ if [ "$(docker ps -q -f name=^${CONTAINER_NAME}$)" ]; then
     docker exec -it -u claude ${CONTAINER_NAME} bash
 else
     echo "Starting container '${CONTAINER_NAME}' for project '${PROJECT_NAME}'"
+    setup_anthropic_api_key
     setup_gh_token
     setup_ssh_config
 
