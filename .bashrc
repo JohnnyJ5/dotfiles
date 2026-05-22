@@ -3,9 +3,11 @@ parse_git_branch() {
 }
 export PS1="\[\033[36m\]\u\[\033[0m\] \[\033[34m\]\w\[\033[0m\]\[\033[31m\]\$(parse_git_branch)\[\033[00m\] \[\033[38;5;208m\]$\[\033[00m\] "
 
-export CLAUDE_CODE_EFFORT_LEVEL=max
+git config --global user.email "michaelcoffey5@gmail.com"
+git config --global user.name "JohnnyJ"
+
 export CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING=1
-alias claude-yolo='claude --dangerously-skip-permissions'
+alias claude-yolo='claude --model opus --effort max --dangerously-skip-permissions'
 
 export PATH=$PATH:/home/johnnyj/dotfiles
 
