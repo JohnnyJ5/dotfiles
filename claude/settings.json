@@ -23,6 +23,10 @@
     "command": "bash ~/.claude/statusline.sh",
     "padding": 2
   },
+  "alwaysThinkingEnabled": false,
   "skipDangerousModePermissionPrompt": true,
-  "alwaysThinkingEnabled": false
+  "theme": "dark",
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  }
 }
